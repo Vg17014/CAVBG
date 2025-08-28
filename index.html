@@ -1,306 +1,425 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html lang="en">
 <head>
-<title>VBG & Co</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6,.company-name {font-family: "Raleway", sans-serif}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CAVBG & Co. | Chartered Accountants in Mumbai</title>
+  <meta name="description" content="CAVBG & Co. is a Mumbai-based Chartered Accountant firm offering accounting, taxation, compliance, business advisory, due diligence, and outsourcing (BPO) services." />
+  <meta name="theme-color" content="#0f172a" />
+  <meta property="og:title" content="CAVBG & Co. | Chartered Accountants in Mumbai" />
+  <meta property="og:description" content="Precision in numbers, clarity in advice. End-to-end CA services: tax, GST, audit support, advisory, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cavbg.com/" />
+  <meta name="robots" content="index,follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;           /* deep slate */
+      --text: #e5e7eb;         /* gray-200 */
+      --muted: #9ca3af;        /* gray-400 */
+      --brand: #22c55e;        /* green-500 */
+      --brand-2: #60a5fa;      /* blue-400 */
+      --card: #11162a;         /* darker card */
+      --accent: #1e293b;       /* slate-800 */
+      --ring: rgba(96,165,250,.5);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      margin: 0; color: var(--text); background:  
+        radial-gradient(1200px 600px at 80% -10%, rgba(96,165,250,.15), transparent),
+        radial-gradient(900px 600px at -10% 0%, rgba(34,197,94,.15), transparent)
+        var(--bg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1200px, 92vw); margin: 0 auto; }/* Header */
+header {
+  position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(11,16,32,.85), rgba(11,16,32,.5));
+  border-bottom: 1px solid rgba(148,163,184,.12);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; }
+.brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: .3px; }
+.brand-badge { display:inline-grid; place-items:center; width: 89px; height: 60px; border-radius: 8px; background-color: #ffffff;}
+nav ul { list-style: none; display: flex; gap: 1rem; padding: 0; margin: 0; }
+nav a { padding: .5rem .75rem; border-radius: 10px; color: var(--muted); font-weight: 500; }
+nav a:hover, nav a:focus { color: var(--text); background: rgba(148,163,184,.12); outline: none; }
+.cta { display: inline-flex; align-items: center; gap: .5rem; padding: .6rem .95rem; border-radius: 12px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #0b1020; font-weight: 700; box-shadow: 0 8px 24px -12px rgba(96,165,250,.6); }
+.cta:focus { outline: 2px solid var(--ring); outline-offset: 2px; }
 
-body, html {
-  height: 100%;
-  line-height: 1.8;
+/* Hero */
+.hero { padding: clamp(3rem, 7vw, 6rem) 0; }
+.hero-inner { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; }
+.hero h1 { font-size: clamp(1.8rem, 3.2vw, 3rem); line-height: 1.2; margin: 0 0 1rem; }
+.sub { color: var(--muted); font-size: 1.05rem; }
+.hero-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.card { background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border: 1px solid rgba(148,163,184,.15); border-radius: 16px; padding: 1rem; }
+.card h3 { margin: .2rem 0 .4rem; font-size: 1.05rem; }
+
+/* Sections */
+section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
+.section-title { font-size: 1.6rem; margin: 0 0 1rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+/* Services */
+.service { background: var(--card); border: 1px solid rgba(148,163,184,.15); padding: 1rem; border-radius: 16px; }
+.service h3 { margin-top: 0; }
+.chip { display:inline-block; padding: .25rem .5rem; border-radius: 999px; font-size: .75rem; color: #d1fae5; background: rgba(34,197,94,.15); border:1px solid rgba(34,197,94,.25); }
+
+/* Pricing */
+.pricing-table { width: 100%; border-collapse: collapse; border: 1px solid rgba(148,163,184,.15); overflow: hidden; border-radius: 16px; }
+.pricing-table th, .pricing-table td { padding: .9rem; text-align: left; border-bottom: 1px solid rgba(148,163,184,.12); }
+.pricing-table thead th { background: linear-gradient(180deg, rgba(96,165,250,.08), rgba(255,255,255,0)); }
+
+/* Contact */
+form { display: grid; gap: .8rem; }
+input, select, textarea { width: 100%; padding: .8rem; border-radius: 12px; background: #0b1224; border: 1px solid rgba(148,163,184,.2); color: var(--text); }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--ring); border-color: var(--brand-2); }
+.inline { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+
+/* Footer */
+footer { background: #0a0f1f; border-top: 1px solid rgba(148,163,184,.12); padding: 2rem 0; color: var(--muted); }
+
+/* Utilities */
+.muted { color: var(--muted); }
+.note { font-size: .9rem; color: var(--muted); }
+.spacer { height: 1rem; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  nav ul { display: none; }
 }
 
-/* Full height image header */
-.bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("/w3images/mac.jpg");
-  min-height: 100%;
-}
-
-.w3-bar .w3-button {
-  padding: 30px;
-}
-
-.company-name {
-  text-shadow:1px 1px 0 blue;
-  font-size: 30px;
-}
-
-
-</style>
+  </style>
+  <script>
+    // Smooth scroll for internal links
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const id = a.getAttribute('href');
+          const el = document.querySelector(id);
+          if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+      });
+    });
+  </script>
+  <!-- Schema.org structured data for an AccountingService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AccountingService",
+    "name": "CAVBG & Co.",
+    "url": "https://cavbg.com/",
+    "logo": "https://cavbg.com/favicon.ico",
+    "areaServed": "IN",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "(Update) B-101, Business Park, Khar East",
+      "addressLocality": "Mumbai",
+      "postalCode": "400051",
+      "addressCountry": "IN"
+    },
+    "telephone": "+91-9820006362",
+    "email": "vg@cavbg.com",
+    "priceRange": "₹₹"
+  }
+  </script>
 </head>
 <body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-wide w3-text-darkblue company-name" style="text-decoration: none;"><img src="ca-logo.png" alt="CA logo" style="height:60px;padding-right: 10px;">VBG & Co.</a>
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-      <!-- <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a> -->
-      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-inr"></i> PRICING</a>
-      <a href="#refundpolicy" class="w3-bar-item w3-button"><i class="fa fa fa-money"></i> REFUND POLICY</a>
-      <a href="#tnc" class="w3-bar-item w3-button"><i class="fa fa-info"></i> T&C</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <div class="brand">
+        <span class="brand-badge" aria-hidden><img src="ca-logo.png" alt="CA logo" style="height:60px;padding-right: 10px;"></span>
+        <a href="#home" aria-label="CAVBG & Co. Home">VBG & Co.</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#policies">Policies</a></li>
+          <li><a href="#contact" class="cta">Book Consultation</a></li>
+        </ul>
+      </nav>
     </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</div>
-
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-  <a href="#refundpolicy" onclick="w3_close()" class="w3-bar-item w3-button"> REFUND POLICY</a>
-  <a href="#tnc" onclick="w3_close()" class="w3-bar-item w3-button"> T&C</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-</nav>
-
-<!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small">Precision in numbers, clarity in advice, Building your wealth, helping you rise.</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Integrity and trust in all that we do,</span><br>
-    <!-- <span class="w3-large"></span> -->
-    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Your financial success begins with you</a></p>
-  </div> 
-</header>
-
-<!-- About Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="about">
-  <h3 class="w3-center">ABOUT THE COMPANY</h3>
-  <p class="w3-center w3-large">A passion for creating Solutions</p>
-  <p class="w3-center">Tailored financial solutions, tax advisory, and business consulting. With a team of highly qualified professionals, we help businesses and individuals navigate financial complexities with ease and confidence..</p>
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-third">
-      <i class="fa fa-book w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Accounting & Bookkeeping</p>
-      <p>Accurate and timely financial records to support your business.</p>
-    </div>
-    <div class="w3-third">
-      <i class="fa fa-desktop w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Tax Planning & Compliance</p>
-      <p>Minimize tax liabilities while staying fully compliant.</p>
-    </div>
-    <div class="w3-thirdr">
-      <i class="fa fa-bank w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Business Advisory</p>
-      <p>Strategic planning to help your business thrive.</p>
-    </div>
-  </div>
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-third">
-      <i class="fa fa-edit w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Financial Due Diligence</p>
-      <p>Risk assessment and financial review for investors and acquisitions.</p>
-    </div>
-    <div class="w3-third">
-      <i class="fa fa-briefcase w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Business Process Outsourcing (BPO)</p>
-      <p>Cost-effective outsourcing of accounting, payroll, and finance functions.</p>
-    </div>
-    <div class="w3-thirdr">
-      <i class="fa fa-bank w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Startup Advisory</p>
-      <p>Helping new businesses with financial structuring and compliance.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Team Section -->
-<div class="w3-container" style="padding:128px 16px" id="team">
-  <h3 class="w3-center">THE TEAM</h3>
-  <p class="w3-center w3-large">The one who runs this company</p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <div class="w3-margin-bottom">
-      <div class="w3-card">
-        <!-- <img src="/w3images/team2.jpg" alt="John" style="width:100%"> -->
-        <div class="w3-container">
-          <h3>Vijay Goswami</h3>
-          <p class="w3-opacity">Proprietor</p>
-          <p>Chartered Accountant having extensive experience in financial advisory and support services and an elaborate experience in investment banking and real estate. He holds expertise in the core areas of auditing, accounting and taxation.</p>
-          <p><a class="w3-button w3-light-grey w3-block" href="#contact"><i class="fa fa-envelope"></i> Contact</a></p>
+  </header>  <main id="home">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>Precision in Numbers, Clarity in Advice</h1>
+          <p class="sub">End-to-end Chartered Accountant services—Tax & GST, Accounting & Bookkeeping, Business Advisory, Due Diligence, and Outsourcing. Grow with confidence while we handle the compliance.</p>
+          <div class="spacer"></div>
+          <div style="display:flex; gap:.75rem; flex-wrap:wrap">
+            <a class="cta" href="#contact" aria-label="Book a consultation">📞 Book a Consultation</a>
+            <a class="cta" href="#services" style="background:transparent; color:var(--text); border:1px solid rgba(148,163,184,.3)" aria-label="Explore services">📄 Explore Services</a>
+          </div>
+          <p class="note" style="margin-top:1rem">ICAI-affiliated | Ethical, transparent, and client-first.</p>
         </div>
+        <div class="hero-cards" aria-hidden="true">
+          <div class="card">
+            <h3>Tax & GST</h3>
+            <p class="muted">ITR filing, GST registration & returns, TDS, and proactive tax planning.</p>
+          </div>
+          <div class="card">
+            <h3>Accounting</h3>
+            <p class="muted">Full-stack bookkeeping, financial statements, reconciliations, and MIS.</p>
+          </div>
+          <div class="card">
+            <h3>Advisory</h3>
+            <p class="muted">Startup structuring, valuations guidance, and CFO-style insights.</p>
+          </div>
+          <div class="card">
+            <h3>Due Diligence</h3>
+            <p class="muted">Financial reviews, risk checks, and M&A support when it matters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- Services -->
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <div class="grid-3">
+      <article class="service" aria-labelledby="svc1">
+        <span class="chip">Compliance</span>
+        <h3 id="svc1">Accounting & Bookkeeping</h3>
+        <ul>
+          <li>End-to-end bookkeeping and ledger maintenance</li>
+          <li>Financial statements (BS, P&L, Cash Flow)</li>
+          <li>Bank, vendor, and payroll reconciliations</li>
+          <li>MIS & management reporting</li>
+        </ul>
+      </article>
+      <article class="service" aria-labelledby="svc2">
+        <span class="chip">Tax</span>
+        <h3 id="svc2">Taxation & GST</h3>
+        <ul>
+          <li>Income-tax returns (Individuals, Firms, Companies)</li>
+          <li>GST registration, returns & e-invoicing support</li>
+          <li>TDS/TCS filings and compliance</li>
+          <li>Tax advisory & planning to optimize liabilities</li>
+        </ul>
+      </article>
+      <article class="service" aria-labelledby="svc3">
+        <span class="chip">Strategy</span>
+        <h3 id="svc3">Business Advisory</h3>
+        <ul>
+          <li>Startup advisory, entity selection & registration</li>
+          <li>Process design & internal controls</li>
+          <li>Budgeting, forecasts & cash-flow planning</li>
+          <li>Virtual CFO engagement</li>
+        </ul>
+      </article>
+      </div>
+    <div class="spacer"></div>
+
+    <div class="grid-2">
+      <article class="service" aria-labelledby="svc4">
+        <span class="chip">Transactions</span>
+        <h3 id="svc4">Financial Due Diligence</h3>
+        <ul>
+          <li>Quality of earnings & risk assessment</li>
+          <li>Historical performance and variance analysis</li>
+          <li>Regulatory & compliance checks</li>
+          <li>M&A and investor support</li>
+        </ul>
+      </article>
+      <article class="service" aria-labelledby="svc5">
+        <span class="chip">Growth</span>
+        <h3 id="svc5">Startup & MSME Support</h3>
+        <ul>
+          <li>Incorporation, registrations & licenses</li>
+          <li>Pitch-ready financials & KPIs</li>
+          <li>Subsidy, scheme & credit facilitation</li>
+          <li>Accounting system set-up & training</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing">
+  <div class="container">
+    <h2 class="section-title">Pricing Snapshot</h2>
+    <p class="note">Transparent pricing for standard scopes. Custom quotes available for complex engagements.</p>
+    <div class="spacer"></div>
+    <div class="grid-2">
+      <div>
+        <table class="pricing-table" aria-describedby="pricing-note">
+          <thead>
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">Indicative Fee</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Accounting & Bookkeeping</td><td>₹5,000 / hour</td></tr>
+            <tr><td>Income-Tax Return Filing</td><td>From ₹2,000 / return</td></tr>
+            <tr><td>GST Returns</td><td>From ₹1,500 / return</td></tr>
+            <tr><td>Business Advisory</td><td>On request</td></tr>
+            <tr><td>Financial Due Diligence</td><td>On request</td></tr>
+          </tbody>
+        </table>
+        <p id="pricing-note" class="note">*Prices are indicative and may vary based on complexity and volume.</p>
+      </div>
+      <div class="card">
+        <h3>Need a custom quote?</h3>
+        <p class="muted">Tell us about your business size, industry, and current setup. We'll recommend the most efficient engagement model.</p>
+        <div class="spacer"></div>
+        <a class="cta" href="#contact" aria-label="Request a custom quote">Request a Quote</a>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Promo Section "Statistics" -->
-<div class="w3-container w3-row w3-center w3-light-grey w3-padding-64">
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">10+</span>
-    <br>Employees
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">55+</span>
-    <br>Projects Done
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">30+</span>
-    <br>Happy Clients
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">150+</span>
-    <br>Meetings
-  </div>
-</div>
-
-<!-- Pricing Section -->
-<div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
-  <h3>PRICING</h3>
-  <p class="w3-large">Choose a pricing plan that fits your needs.</p>
-  <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-quarter w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Accounting</li>
-        <li class="w3-padding-16">
-            <span class="w3-opacity">starting from</span>
-            <h2 class="w3-wide">₹5000</h2>
-            <span class="w3-opacity">per hour</span>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-quarter w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Tax Filing (Individual)</li>
-        <li class="w3-padding-16">
-            <span class="w3-opacity">starting from</span>
-            <h2 class="w3-wide">₹2000</h2>
-            <span class="w3-opacity">per return</span>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-quarter w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Tax Filing (Business)</li>
-        <li class="w3-padding-16">
-            <span class="w3-opacity">starting from</span>
-            <h2 class="w3-wide">₹2000</h2>
-            <span class="w3-opacity">per return</span>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-quarter w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Tax Advisory</li>
-        <li class="w3-padding-16">
-            <span class="w3-opacity">starting from</span>
-            <h2 class="w3-wide">₹2000</h2>
-            <span class="w3-opacity">per hour</span>
-        </li>
-      </ul>
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About CAVBG & Co.</h2>
+    <div class="grid-2">
+      <div>
+        <p>We are a Mumbai-based Chartered Accountant firm dedicated to delivering reliable, efficient and compliant financial solutions. Our client-first approach ensures clarity in every engagement—whether it’s compliance, advisory, or transaction support.</p>
+        <ul>
+          <li>ICAI-affiliated practice following the highest ethical standards</li>
+          <li>Transparent pricing and predictable delivery</li>
+          <li>Process-driven approach with robust internal controls</li>
+          <li>Data security and confidentiality at the core of our operations</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What sets us apart</h3>
+        <ul>
+          <li>Hands-on partner involvement for key decisions</li>
+          <li>Clear SLAs and proactive communication</li>
+          <li>Industry-agnostic, with MSME & startup focus</li>
+          <li>Scalable support from compliance to CFO advisory</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-
-
-<!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="refundpolicy">
-  <h3 class="w3-center">REFUND POLICY</h3>
-  <p class="w3-center">
-    We believes in helping its customers as far as possible, and has therefore a liberal cancellation policy. 
-    Under this policy:
-    <ul>
-    <li> Cancellations will be considered only if the request is made immediately after placing the order. 
-    However, the cancellation request may not be entertained if services are already provided.
-    </li>
-    
-    <li> In case of receipt of deficiency in the services please report the same to our team. The request will, however, be entertained once our team has checked and determined the same. This should be reported within Only same day days of receipt of the services.
-    </li>
-    <li> In case of any Refunds approved by us, it'll take 9-15 Days days for the refund to be processed to the end customer.
-    </li>
-    </ul>
-    </p>
-  <h6 class="w3-right">Last updated on 22-08-2025 19:00:00</h6>
-
-</div>
-
-
-
-<!-- Contact Section -->
-<div class="w3-container w3-white" style="padding:128px 16px" id="tnc">
-  <h3 class="w3-center">TERMS & CONDITIONS</h3>
-  <p class="w3-center">
-    These Terms and Conditions, along with privacy policy or other terms (“Terms”) constitute a binding agreement by and between VIJAY GOSWAMI, ( “Website Owner” or “we” or “us” or “our”) and you (“you” or “your”) and relate to your use of our website, goods (as applicable) or services (as applicable) (collectively, “Services”).
-    By using our website and availing the Services, you agree that you have read and accepted these Terms (including the Privacy Policy). We reserve the right to modify these Terms at any time and without assigning any reason. It is your responsibility to periodically review these Terms to stay informed of updates.
-    The use of this website or availing of our Services is subject to the following terms of use: To access and use the Services, you agree to provide true, accurate and complete information to us during and after registration, and you shall be responsible for all acts done through the use of your registered account.
-    Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials offered on this website or through the Services, for any specific purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.
-    Your use of our Services and the website is solely at your own risk and discretion. You are required to independently assess and ensure that the Services meet your requirements.
-    The contents of the Website and the Services are proprietary to Us and you will not have any authority to claim any intellectual property rights, title, or interest in its contents.
-    You acknowledge that unauthorized use of the Website or the Services may lead to action against you as per these Terms or applicable laws.
-    You agree to pay us the charges associated with availing the Services.
-    You agree not to use the website and/ or Services for any purpose that is unlawful, illegal or forbidden by these Terms, or Indian or local laws that might apply to you.
-    You agree and acknowledge that website and the Services may contain links to other third party websites. On accessing these links, you will be governed by the terms of use, privacy policy and such other policies of such third party websites.
-    You understand that upon initiating a transaction for availing the Services you are entering into a legally binding and enforceable contract with the us for the Services.
-    You shall be entitled to claim a refund of the payment made by you in case we are not able to provide the Service. The timelines for such return and refund will be according to the specific Service you have availed or within the time period provided in our policies (as applicable). In case you do not raise a refund claim within the stipulated time, than this would make you ineligible for a refund.
-    Notwithstanding anything contained in these Terms, the parties shall not be liable for any failure to perform an obligation under these Terms if performance is prevented or delayed by a force majeure event.
-    These Terms and any dispute or claim relating to it, or its enforceability, shall be governed by and construed in accordance with the laws of India.
-    All disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts in Mumbai, Maharashtra
-    All concerns or communications relating to these Terms must be communicated to us using the contact information provided on this website.</p>
-  <h6 class="w3-right">Last updated on 22-08-2025 19:00:00</h6>
-  
+<!-- Policies -->
+<section id="policies">
+  <div class="container">
+    <h2 class="section-title">Policies & Compliance</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Privacy Policy</h3>
+        <p class="muted">We collect minimal personal data necessary to deliver our services. Data is processed lawfully and kept confidential. Access is limited to authorized personnel only.</p>
+      </div>
+      <div class="card">
+        <h3>Refund & Cancellation</h3>
+        <p class="muted">Report any discrepancies on the same day of service delivery at <a href="mailto:vg@cavbg.com">vg@cavbg.com</a>. Refunds are governed by the engagement letter and scope agreed.</p>
+      </div>
+      <div class="card">
+        <h3>Disclaimer</h3>
+        <p class="muted">Information on this website is for general guidance only and does not constitute professional advice. Please consult us for advice tailored to your situation.</p>
+      </div>
+      <div class="card">
+        <h3>Terms of Use</h3>
+        <p class="muted">By using this website, you agree to our standard terms, including acceptable use, intellectual property, and limitation of liability.</p>
+      </div>
+    </div>
   </div>
+</section>
 
-<!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
-  <h3 class="w3-center">CONTACT</h3>
-  <p class="w3-center w3-large">WE ARE WAITING TO HEAR FROM YOU. WRITE TO US TO HELP US INCORPORATE YOUR FEEDBACK
-    INTO OUR PROCESSES TO PROVIDE A BETTER EXPERIENCE</p>
-  <div style="margin-top:48px">
-    <p><i class="fa fa-id-card fa-fw w3-xxlarge w3-margin-right"></i> Legal Name: VBG & Co.</p>
-    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Room no 6, Manibai Shantilal Chawl, Khar East, Mumbai-400055, India</p>
-    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +91 9820006362</p>
-    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: vg@cavbg.com</p>
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="grid-2">
+      <div>
+        <form id="contactForm" novalidate>
+          <div class="inline">
+            <div>
+              <label for="name">Full Name</label>
+              <input id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div class="inline">
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" placeholder="+91-" />
+            </div>
+            <div>
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option>Accounting & Bookkeeping</option>
+                <option>Taxation & GST</option>
+                <option>Business Advisory</option>
+                <option>Financial Due Diligence</option>
+                <option>Startup & MSME Support</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="2" placeholder="Tell us a little about your requirements"></textarea>
+          </div>
+          <button class="cta" type="submit">Send Message</button>
+          <p class="note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+
+      </div>
+      <div>
+        <div class="card">
+          <h3>Office</h3>
+          <p>CAVBG & Co.</p>
+          <p>Room no 6, Manibai Shantilal Chawl, Khar East, Mumbai-400055, India</p>
+          <p><strong>Phone:</strong> +91-9820006362<br/>
+             <strong>Email:</strong> <a href="mailto:vg@cavbg.com">vg@cavbg.com</a></p>
+          <div class="spacer"></div>
+          <a class="cta" href="https://wa.me/919820006362" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬 WhatsApp Us</a>
+        </div>
+        <div class="spacer"></div>
+        
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-</footer>
- 
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+  </main>  <footer>
+    <div class="container">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap">
+        <p class="note">© <span id="year"></span> CAVBG & Co. All rights reserved.</p>
+        <p class="note">Last updated: <time id="updated">22‑08‑2025 19:00:00</time></p>
+      </div>
+    </div>
+  </footer>  <script>
+    // Update year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-  } else {
-    mySidebar.style.display = 'block';
-  }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-</script>
-
-</body>
+    // Basic client-side form handling (no backend). Replace with your API/mail service.
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const note = document.getElementById('formNote');
+      const form = new FormData(e.currentTarget);
+      const name = form.get('name');
+      const email = form.get('email');
+      if (!name || !email) {
+        note.textContent = 'Please fill in required fields (name & email).';
+        return;
+      }
+      note.textContent = 'Thanks! Your message has been captured locally. Please connect this form to your email/API in production.';
+    });
+  </script></body>
 </html>
